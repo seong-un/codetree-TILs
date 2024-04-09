@@ -12,8 +12,8 @@ for q in range(Q):
         for i in range((parameter[0] - t) % L):
             belt.appendleft(belt.pop())
             for k, v in list(customer.items()):
+                print(k)
                 if k in belt[v[0]]:
-                    print(0)
                     j = 0
                     try:
                         while True:
