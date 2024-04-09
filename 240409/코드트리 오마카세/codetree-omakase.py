@@ -39,7 +39,7 @@ for q in range(Q):
             j = 0
             try:
                 while True:
-                    belt[int(parameter[1])].remove(parameter[2])
+                    belt[customer[parameter[2]][0]].remove(parameter[2])
                     j += 1
                     if customer[parameter[2]][1] - j <= 0:
                         break
