@@ -12,7 +12,6 @@ for q in range(Q):
         for i in range((parameter[0] - t) % L):
             belt.appendleft(belt.pop())
             for k, v in list(customer.items()):
-                print(k, belt)
                 if k in belt[v[0]]:
                     j = 0
                     try:
@@ -46,7 +45,7 @@ for q in range(Q):
                         break
                 customer.pop(parameter[2], None)
             except:
-                customer[parameter[2]] = [int(parameter[1]), customer[parameter[2]][1] - j]
+                customer[parameter[2]] = [customer[parameter[2]][0], customer[parameter[2]][1] - j]
     elif command == '200':
         customer[parameter[2]] = [int(parameter[1]), int(parameter[3])]
         if parameter[2] in belt[int(parameter[1])]:
