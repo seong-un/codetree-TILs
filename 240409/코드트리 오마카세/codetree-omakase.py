@@ -13,6 +13,7 @@ for q in range(Q):
             belt.appendleft(belt.pop())
             for k, v in list(customer.items()):
                 if k in belt[v[0]]:
+                    print(0)
                     j = 0
                     try:
                         while True:
