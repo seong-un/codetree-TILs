@@ -21,7 +21,7 @@ for q in range(Q):
     else:
         for i in range((parameter[0] - t) % L):
             belt.appendleft(belt.pop())
-        for b, d in enumerate(belt):
+        for d, b in enumerate(belt):
             for k, v in list(b.items()):
                 if v >= customer[k]:
                     customer.pop(k, None)
