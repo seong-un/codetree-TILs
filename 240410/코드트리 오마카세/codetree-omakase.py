@@ -2,7 +2,7 @@ from collections import deque
 
 L, Q = map(int, input().split())
 
-belt = deque([dict() for _ in range(L)] )
+belt = deque([dict() for _ in range(15000)] )
 t = 0
 customer = dict()
 for q in range(Q):
