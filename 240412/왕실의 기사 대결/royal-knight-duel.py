@@ -24,7 +24,7 @@ def fight(who, where, damage_direction, king):
     if who != king and damage_direction == -1:
         for x in range(sheild[who][0]):
             for y in range(sheild[who][1]):
-                if chess[knight[who][0] + x][knight[who][1] + y] == 1:
+                if (0 <= knight[who][0] + x < N and 0 <= knight[who][1] + y < N) and chess[knight[who][0] + x][knight[who][1] + y] == 1:
                     damage[who] += damage_direction
 
     knight[who][0] += dx[where]
@@ -56,7 +56,7 @@ def fight(who, where, damage_direction, king):
                                     stt = 'interaction'
     
     # 피해 계산
-    if who != king and damage_direction == 1:
+    if stt != 'roll_back' and who != king and damage_direction == 1:
         for x in range(sheild[who][0]):
             for y in range(sheild[who][1]):
                 if chess[knight[who][0] + x][knight[who][1] + y] == 1:
