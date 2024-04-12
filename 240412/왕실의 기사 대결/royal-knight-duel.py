@@ -41,7 +41,7 @@ def fight(who, where, damage_direction, king):
                 stt = 'roll_back'
     
     # 이동한 위치에 기사가 있느냐?
-    idx = []
+    idx = set()
     if stt != 'roll_back':
         for x in range(sheild[who][0]):
             for y in range(sheild[who][1]):
@@ -51,7 +51,7 @@ def fight(who, where, damage_direction, king):
                     for xx in range(sheild[k][0]):
                         for yy in range(sheild[k][1]):
                             if knight[who][0] + x == knight[k][0] + xx and knight[who][1] + y == knight[k][1] + yy:
-                                idx.append(k)
+                                idx.add(k)
                                 if state[k] == 1:
                                     stt = 'interaction'
     
