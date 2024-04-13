@@ -73,6 +73,7 @@ def fight(who, where, damage_direction, king):
         
         return True
     elif stt == 'roll_back':
+        fight(who, (where + 2) % 4, -1, king)
         return False
     else:
         return True
