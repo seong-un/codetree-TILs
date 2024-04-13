@@ -64,17 +64,23 @@ def fight(who, where, damage_direction, king):
 
     # 상황에 따라 다음 명령문 입력.
     if stt == 'interaction':
+        result = True
         for i in idx:
-            fight(i, where, damage_direction, king)
+            result *= fight(i, where, damage_direction, king)
+        if not result:
+            for i in idx:
+                fight(i, (where + 2) % 4, -1, king)
+        
+        return True
     elif stt == 'roll_back':
-        fight(who, (where + 2) % 4, -1, king)
+        return False
     else:
-        return
+        return True
 
 # 명령문 실행
 for i in range(Q):
     who, where = map(int, input().split())
-    
+
     # who를 where 방향으로 이동시켜 본다.
     fight(who - 1, where, 1, who - 1)
 
